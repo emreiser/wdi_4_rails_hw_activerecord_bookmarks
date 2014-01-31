@@ -12,6 +12,14 @@
 
 	<div class='container'>
 		<h1><%= link_to 'Bookmarks', root_path %></h1>
+		<div class='status'>
+			<h5>
+			<% if user_signed_in? %>
+				<%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+			<% else %>
+				<%= link_to "Sign in", new_user_session_path %>
+			<% end %></h5>
+	</div>
 
 		<div class= 'alert'>
 			<% if flash[:error].present? %>

@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
 	before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_user!, only: [:edit, :destroy]
+
 
 	def find_bookmark
 		@bookmark = Bookmark.find(params[:id])

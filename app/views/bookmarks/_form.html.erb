@@ -2,7 +2,7 @@
 	<%= form_for @bookmark do |form| %>
 		<%= form.text_field :name, placeholder: 'Site name' %>
 		<%= form.text_field :comment, placeholder: 'Comment (optional)'%>
-		<%= form.submit 'Add Bookmark', class: 'button' %><br>
+		<%= form.submit 'Save Bookmark', class: 'button' %><br>
 		<%= form.text_field :url, placeholder: 'Paste full URL here' %>
 		<%= form.label(:favorite) %>
 		<%= form.check_box :favorite %>
